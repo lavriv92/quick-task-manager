@@ -10,6 +10,10 @@ Router.map(function() {
     this.route('new');
     this.route('show', { path: ':postId' });
   });
+  this.route('boards', function() {
+    this.route('new');
+    this.route('show', { path: ':boardId' });
+  });
 });
 
 export default Router;
