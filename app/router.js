@@ -6,6 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('projects', function() {
+    this.route('new');
+    this.route('show', { path: ':postId' });
+  });
 });
 
 export default Router;

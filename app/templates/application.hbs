@@ -1,3 +1,16 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<header class="navbar navbar-default navbar-static-top">
+  <div class="navbar-header">
+    {{#link-to 'index' class="navbar-brand"}}Manager{{/link-to}}
+  </div>
+  <nav class="nav navbar-nav pull-right">
+    <li><a href="#">Dashboard</a></li>
+    <li>{{#link-to 'projects.index'}}Projects{{/link-to}}</li>
+    <li><a href="#">Boards</a></li>
+  </nav>
+</header>
+<div class="container">
+  {{outlet}}
+</div>
+<footer class="footer">
+  <div class="copy">&copy; ilavriv, ivan@temy.co</div>
+</footer>
