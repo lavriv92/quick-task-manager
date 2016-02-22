@@ -1,6 +1,14 @@
 import DS from 'ember-data';
+import TimestampMixin from '../mixins/timestamp';
 
-export default DS.Model.extend({
-  name: DS.attr(),
-  description: DS.attr()
+const {
+  Model,
+  attr,
+  hasMany
+} = DS;
+
+export default Model.extend(TimestampMixin, {
+  name: attr(),
+  description: attr(),
+  boards: hasMany('board', { async: true, dependent: 'destroy' }),
 });

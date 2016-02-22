@@ -4,13 +4,13 @@ import TimestampMixin from '../mixins/timestamp';
 const {
   Model,
   attr,
-  belongsTo,
-  hasMany
+  belongsTo
 } = DS;
 
 export default Model.extend(TimestampMixin, {
-  name: attr(),
+  title: attr(),
   description: attr(),
-  project: belongsTo('project', { async: true, autoSave: true }),
-  tasks: hasMany('task', { async: true, dependent: 'destroy' })
+  status: attr(),
+  priority: attr('number'),
+  board: belongsTo('board', { async: true })
 });
